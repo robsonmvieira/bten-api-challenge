@@ -1,6 +1,7 @@
-import { IUserRepository } from 'infra/repositories/IUserRepository'
 import { IUpdateUserDTO } from 'modules/users/dtos/update-user.dto'
 import { inject, injectable } from 'tsyringe'
+
+import { IUserRepository } from '../../../../infra/repositories/IUserRepository'
 @injectable()
 export class UpdateUserUseCase {
   constructor(

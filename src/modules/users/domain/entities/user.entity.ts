@@ -1,5 +1,6 @@
-import EntityBase from 'infra/database/base-classes/typeorm.entity.base'
 import { Column, Entity } from 'typeorm'
+
+import EntityBase from '../../../../infra/database/base-classes/typeorm.entity.base'
 
 @Entity('users')
 export class User extends EntityBase {

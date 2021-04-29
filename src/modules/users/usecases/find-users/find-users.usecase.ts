@@ -1,6 +1,7 @@
-import { IUserRepository } from 'infra/repositories/IUserRepository'
 import { User } from 'modules/users/domain/entities/user.entity'
 import { inject, injectable } from 'tsyringe'
+
+import { IUserRepository } from '../../../../infra/repositories/IUserRepository'
 
 @injectable()
 export class ListUsersUseCase {
@@ -8,7 +9,7 @@ export class ListUsersUseCase {
     @inject('UserRepository') private userRepository: IUserRepository
   ) {}
 
-  execute(): Promise<User[]> {
+  async execute(): Promise<User[]> {
     return this.userRepository.getAll()
   }
 }

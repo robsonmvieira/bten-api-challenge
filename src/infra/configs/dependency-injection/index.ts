@@ -1,5 +1,6 @@
-import { IUserRepository } from 'infra/repositories/IUserRepository'
-import { UserRepository } from 'infra/repositories/user/UserRepository'
 import { container } from 'tsyringe'
+
+import { IUserRepository } from '../../repositories/IUserRepository'
+import { UserRepository } from '../../repositories/user/UserRepository'
 
 container.registerSingleton<IUserRepository>('UserRepository', UserRepository)
