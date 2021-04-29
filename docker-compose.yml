@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  database_bten:
+    image: postgres
+    container_name: dataBaseBten
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=dev
+      - POSTGRES_DB=btenDb
+    volumes:
+      - pgdata:/data/postgres
+    network_mode: host
+  app:
+    build: .
+    container_name: btenApi
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/usr/app
+    network_mode: host
+
+
+volumes:
+  pgdata:
