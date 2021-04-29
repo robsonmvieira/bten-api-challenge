@@ -1,6 +1,12 @@
 # Logs
 .vscode
 node_modules
+
+# orm config
+
+ormconfig.js
+ormconfig.json
+
 logs
 *.log
 npm-debug.log*
