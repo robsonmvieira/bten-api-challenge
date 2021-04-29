@@ -1,22 +1,34 @@
 import { User } from 'modules/users/domain/entities/user.entity'
+import { getRepository, Repository } from 'typeorm'
 
 import { IUserRepository } from '../IUserRepository'
 
 export class UserRepository implements IUserRepository {
-  constructor() {}
-  getAll(): Promise<User[]> {
-    throw new Error('Method not implemented.')
+  repository: Repository<User>
+  constructor() {
+    this.repository = getRepository(User)
   }
-  getById(userId: string): Promise<User> {
-    throw new Error('Method not implemented.')
+  async getAll(): Promise<User[]> {
+    return this.getAll()
   }
-  create(user: User): Promise<User> {
-    throw new Error('Method not implemented.')
+  async getById(userId: string): Promise<User> {
+    return this.repository.findOne(userId)
   }
-  update(userId: string, user: User): Promise<User> {
-    throw new Error('Method not implemented.')
+  async create(user: User): Promise<User> {
+    return this.repository.save(user)
   }
-  remove(userId: string): Promise<void> {
-    throw new Error('Method not implemented.')
+  async update(userId: string, user: User): Promise<User> {
+    const result = await this.repository.findOne(userId)
+    const userUpdated = { ...result, ...user }
+    await this.repository.update(userId, user)
+    return userUpdated
+  }
+  async remove(userId: string): Promise<void> {
+    const userExists = await this.getById(userId)
+
+    if (!userExists) {
+      throw new Error("User Doesn't exists")
+    }
+    await this.repository.delete(userExists.id)
   }
 }
