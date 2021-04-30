@@ -10,7 +10,7 @@ export class UserRepository implements IUserRepository {
     this.repository = getRepository(User)
   }
   async getAll(): Promise<User[]> {
-    return this.getAll()
+    return this.repository.find()
   }
   async getById(userId: string): Promise<User> {
     return this.repository.findOne(userId)
