@@ -1,6 +1,6 @@
-import { User } from 'modules/users/domain/entities/user.entity'
-import { ICreateUserDTO } from 'modules/users/dtos/create-user.dto'
-import { IUpdateUserDTO } from 'modules/users/dtos/update-user.dto'
+import { User } from '../../modules/users/domain/entities/user.entity'
+import { ICreateUserDTO } from '../../modules/users/dtos/create-user.dto'
+import { IUpdateUserDTO } from '../../modules/users/dtos/update-user.dto'
 
 export interface IUserRepository {
   getAll(): Promise<User[]>

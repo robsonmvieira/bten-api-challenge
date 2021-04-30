@@ -6,7 +6,7 @@ import { IUserRepository } from '../../../../infra/repositories/IUserRepository'
 @injectable()
 export class FindByIdUseCase {
   constructor(
-    @inject('UserRepository') private userRepository: IUserRepository
+    @inject('IUserRepository') private userRepository: IUserRepository
   ) {}
 
   async execute(userId: string): Promise<User> {
