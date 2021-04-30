@@ -1,7 +1,7 @@
 import { container } from 'tsyringe'
 
 import { IHash } from '../../../core/interface-adapters/interfaces/hash.adapter'
-import { HashAdapter } from '../../adapters/hash/jwt.hash.adapter'
+import { HashAdapter } from '../../adapters/hash/bcrypt.hash.adapter'
 import { IUserRepository } from '../../repositories/IUserRepository'
 import { UserRepository } from '../../repositories/user/UserRepository'
 
