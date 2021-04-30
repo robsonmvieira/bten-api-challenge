@@ -8,4 +8,5 @@ export interface IUserRepository {
   create(user: ICreateUserDTO): Promise<void>
   update(userId: string, user: IUpdateUserDTO): Promise<void>
   remove(userId: string): Promise<void>
+  findByEmail(email: string): Promise<User>
 }
