@@ -9,6 +9,9 @@ export class UserRepository implements IUserRepository {
   constructor() {
     this.repository = getRepository(User)
   }
+  async findByEmail(email: string): Promise<User> {
+    return this.repository.findOne({ where: { email } })
+  }
   async getAll(): Promise<User[]> {
     return this.repository.find()
   }
