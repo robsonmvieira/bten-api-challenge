@@ -33,9 +33,13 @@ export class CreateSessionUseCase {
       throw new ArgumentInvalidException('Email or Password is incorrect', 400)
     }
 
-    const token = this.tokeJWT.sign({}, process.env.APP_SECRET, {
-      expiresIn: process.env.APP_EXESPIRE_IN
-    })
+    const token = this.tokeJWT.sign(
+      { userId: userExists.id },
+      process.env.APP_SECRET,
+      {
+        expiresIn: process.env.APP_EXESPIRE_IN
+      }
+    )
 
     const response: CreateSessionResponse = {
       user: {
