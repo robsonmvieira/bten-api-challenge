@@ -10,6 +10,6 @@ export class UpdateUserHttpController {
     const { body } = req
     await useCase.execute(id, body)
 
-    return res.status(200).send()
+    return res.status(204).send()
   }
 }

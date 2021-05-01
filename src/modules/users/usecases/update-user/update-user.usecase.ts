@@ -9,6 +9,6 @@ export class UpdateUserUseCase {
   ) {}
 
   async execute(userId: string, userUpdateDTO: IUpdateUserDTO): Promise<void> {
-    this.userRepository.update(userId, userUpdateDTO)
+    await this.userRepository.update(userId, userUpdateDTO)
   }
 }
