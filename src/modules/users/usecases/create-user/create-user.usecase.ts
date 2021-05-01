@@ -3,7 +3,7 @@ import { inject, injectable } from 'tsyringe'
 import { ArgumentInvalidException } from '../../../../core/exceptions/argument-invalid.exception'
 import { ConflictException } from '../../../../core/exceptions/conflict.exception'
 import { IHash } from '../../../../core/interface-adapters/interfaces/hash.adapter'
-import { IUserRepository } from '../../../../infra/repositories/IUserRepository'
+import { IUserRepository } from '../../../../infra/repositories/user/IUserRepository'
 import { CreateUserRequest } from './create-user.dto.request'
 
 @injectable()

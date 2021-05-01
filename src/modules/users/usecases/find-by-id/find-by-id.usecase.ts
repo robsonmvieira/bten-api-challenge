@@ -1,6 +1,6 @@
 import { injectable, inject } from 'tsyringe'
 
-import { IUserRepository } from '../../../../infra/repositories/IUserRepository'
+import { IUserRepository } from '../../../../infra/repositories/user/IUserRepository'
 import { UserResponse } from '../../dtos/user.response'
 
 @injectable()

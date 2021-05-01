@@ -4,7 +4,7 @@ import { verify } from 'jsonwebtoken'
 
 import { ArgumentNotProvidedException } from '../../core/exceptions/argument-not-provided.exception'
 import { NotFoundException } from '../../core/exceptions/not-found.exception'
-import { UserRepository } from '../repositories/user/UserRepository'
+import { UserRepository } from '../../modules/users/database/UserRepository'
 
 interface IPayload {
   userId: string

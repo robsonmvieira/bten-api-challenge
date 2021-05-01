@@ -1,6 +1,6 @@
 import { inject, injectable } from 'tsyringe'
 
-import { IUserRepository } from '../../../../infra/repositories/IUserRepository'
+import { IUserRepository } from '../../../../infra/repositories/user/IUserRepository'
 
 @injectable()
 export class RemoveUserUseCase {

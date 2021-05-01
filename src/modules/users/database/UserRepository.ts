@@ -1,10 +1,10 @@
 import { getRepository, Repository } from 'typeorm'
 
 import { NotFoundException } from '../../../core/exceptions/not-found.exception'
-import { User } from '../../../modules/users/domain/entities/user.entity'
-import { ICreateUserDTO } from '../../../modules/users/dtos/create-user.dto'
-import { IUpdateUserDTO } from '../../../modules/users/dtos/update-user.dto'
-import { IUserRepository } from '../IUserRepository'
+import { IUserRepository } from '../../../infra/repositories/user/IUserRepository'
+import { User } from '../domain/entities/user.entity'
+import { ICreateUserDTO } from '../dtos/create-user.dto'
+import { IUpdateUserDTO } from '../dtos/update-user.dto'
 
 export class UserRepository implements IUserRepository {
   repository: Repository<User>

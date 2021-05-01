@@ -3,7 +3,7 @@ import { inject, injectable } from 'tsyringe'
 import { ArgumentInvalidException } from '../../../../core/exceptions/argument-invalid.exception'
 import { IHash } from '../../../../core/interface-adapters/interfaces/hash.adapter'
 import { ITokenAdapter } from '../../../../core/interface-adapters/interfaces/token.adapter'
-import { IUserRepository } from '../../../../infra/repositories/IUserRepository'
+import { IUserRepository } from '../../../../infra/repositories/user/IUserRepository'
 import { CreateSessionRequest } from './create-session.request'
 import { CreateSessionResponse } from './create-session.response'
 
