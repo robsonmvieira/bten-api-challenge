@@ -7,7 +7,7 @@ export class FindByIdHttpController {
   async handle(req: Request, res: Response): Promise<Response> {
     const useCase = container.resolve(FindByIdUseCase)
     const { id } = req.params
-    const user = useCase.execute(id)
+    const user = await useCase.execute(id)
     return res.status(200).json(user)
   }
 }

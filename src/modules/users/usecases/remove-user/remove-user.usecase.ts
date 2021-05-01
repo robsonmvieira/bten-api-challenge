@@ -8,6 +8,6 @@ export class RemoveUserUseCase {
     @inject('IUserRepository') private userRepository: IUserRepository
   ) {}
   async execute(userId: string): Promise<void> {
-    this.userRepository.remove(userId)
+    await this.userRepository.remove(userId)
   }
 }
