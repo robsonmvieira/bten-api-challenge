@@ -15,11 +15,10 @@ const createUserHttpController = new CreateUserHttpController()
 const updateUserHttpController = new UpdateUserHttpController()
 const removeUserHttpController = new RemoveUserHttpController()
 
-userRoutes.use(authInterceptor)
+userRoutes.post('/', createUserHttpController.handle)
 userRoutes.get('/', findUsersHttpController.handle)
 userRoutes.get('/:id', findByIdHttpController.handle)
-userRoutes.post('/', createUserHttpController.handle)
-userRoutes.put('/:id', updateUserHttpController.handle)
-userRoutes.delete('/:id', removeUserHttpController.handle)
+userRoutes.put('/:id', authInterceptor, updateUserHttpController.handle)
+userRoutes.delete('/:id', authInterceptor, removeUserHttpController.handle)
 
 export default userRoutes
