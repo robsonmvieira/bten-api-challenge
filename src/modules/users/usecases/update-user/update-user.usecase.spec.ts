@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { ExceptionBase } from '../../../../core/exceptions/exception.base'
 import { IHash } from '../../../../core/interface-adapters/interfaces/hash.adapter'
 import { UserInMemoryRepository } from '../../database/user.in-memory.repository'
