@@ -1,0 +1,16 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "UserDb",
+  "password": "DbPassword",
+  "database": "dbName",
+  "sinchronize": true,
+  "entities": [
+    "./src/modules/**/database/*.entity.ts"
+  ],
+  "migrations": [
+    "./src/infra/database/migrations/*.ts"
+  ],
+  "cli": { "migrationsDir": "./src/infra/database/migrations" }
+}
